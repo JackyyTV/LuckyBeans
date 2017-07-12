@@ -1,0 +1,9 @@
+#Creative Tab
+itemGroup.luckybeans=Lucky Beans
+
+#Items
+item.luckybeans.mysterious_bean.name=§dRandom Lucky Bean
+item.luckybeans.bean.name=Lucky Bean
+
+#Blocks
+tile.luckybeans.bean_sapling.name=§bLucky Bean Sapling
