@@ -13,6 +13,7 @@ public class ItemBean extends Item implements IHasModel {
         setRegistryName(Data.MODID + ":bean");
         setUnlocalizedName(Data.MODID + ".bean");
         setCreativeTab(Data.TAB);
+        setHasSubtypes(true);
         Data.ITEMS.add(this);
     }
 
@@ -20,9 +21,9 @@ public class ItemBean extends Item implements IHasModel {
         return true;
     }
 
+    @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
-        if (this.isInCreativeTab(tab))
-        {
+        if (this.isInCreativeTab(tab)) {
             for (int i = 0; i < 16; ++i)
             {
                 items.add(new ItemStack(this, 1, i));

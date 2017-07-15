@@ -1,6 +1,6 @@
 {
   "parent": "block/cross",
   "textures": {
-    "all": "luckybeans:blocks/bean_sapling"
+    "cross": "luckybeans:blocks/bean_sapling"
   }
 }

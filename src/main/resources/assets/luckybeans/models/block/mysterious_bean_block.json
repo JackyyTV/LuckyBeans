@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "luckybeans:blocks/mysterious_bean_block"
+  }
+}

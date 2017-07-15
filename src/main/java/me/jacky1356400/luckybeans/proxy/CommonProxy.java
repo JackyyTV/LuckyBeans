@@ -16,11 +16,9 @@ public class CommonProxy {
     public static Configuration config;
 
     public void preInit(FMLPreInitializationEvent e) {
-        /*
         File configDir = e.getModConfigurationDirectory();
         config = new Configuration(new File(configDir.getPath(), "luckybeans.cfg"));
         Config.readConfig();
-        */
         MinecraftForge.EVENT_BUS.register(new ModRegistry());
     }
 

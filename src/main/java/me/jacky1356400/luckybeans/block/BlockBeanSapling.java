@@ -1,36 +1,25 @@
 package me.jacky1356400.luckybeans.block;
 
 import me.jacky1356400.luckybeans.util.Data;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.IGrowable;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
 public class BlockBeanSapling extends BlockBush implements IGrowable {
 
-    private static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
-
     public BlockBeanSapling() {
         super();
+        setSoundType(SoundType.PLANT);
+        setHardness(0.0f);
         setRegistryName(Data.MODID + ":bean_sapling");
         setUnlocalizedName(Data.MODID + ".bean_sapling");
-        this.setSoundType(SoundType.PLANT);
-        this.setHardness(0.0F);
-        this.setCreativeTab(Data.TAB);
-    }
-
-    @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return SAPLING_AABB;
+        setCreativeTab(Data.TAB);
+        Data.BLOCKS.add(this);
     }
 
     @Override
