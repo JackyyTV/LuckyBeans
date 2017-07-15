@@ -1,0 +1,21 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"textures": {
+			"all": "luckybeans:blocks/bean_leaf"
+		}
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": [{}],
+		"decayable": {
+			"true": {},
+			"false": {}
+		},
+		"check_decay": {
+			"true": {},
+			"false": {}
+		}
+	}
+}

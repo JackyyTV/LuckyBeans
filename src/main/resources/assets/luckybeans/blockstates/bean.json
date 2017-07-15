@@ -1,0 +1,92 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "builtin/generated",
+		"transform": "forge:default-item"
+	},
+	"variants": {
+		"meta": {
+			"0": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"1": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"2": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"3": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"4": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"5": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"6": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"7": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"8": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"9": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"10": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"11": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"12": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"13": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"14": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			},
+			"15": {
+				"textures": {
+					"layer0": "luckybeans:items/bean"
+				}
+			}
+
+		}
+	}
+}
