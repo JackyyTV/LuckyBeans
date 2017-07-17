@@ -17,7 +17,7 @@ import net.minecraft.world.IBlockAccess;
 
 public class BlockMysteriousBean extends Block implements IHasModel {
 
-	public static final AxisAlignedBB BULB_AABB = new AxisAlignedBB(0.3125D, 0.0D, 0.3125D, 0.6875D, 0.5D, 0.6875D);
+	public static final AxisAlignedBB BULB_AABB = new AxisAlignedBB(0.3125D, 0.5D, 0.3125D, 0.6875D, 1.0D, 0.6875D);
 
 	public BlockMysteriousBean() {
 		super(Material.WOOD);
