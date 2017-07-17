@@ -5,6 +5,7 @@ import java.util.Random;
 import me.jacky1356400.luckybeans.init.ModRegistry;
 import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
+import me.jacky1356400.luckybeans.worldgen.BeanTreeGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockLeaves;
@@ -17,10 +18,9 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenTrees;
+import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class BlockBeanSapling extends BlockBush implements IGrowable, IHasModel {
-
-	public static final WorldGenTrees BEAN_TREE = new WorldGenTrees(true, 5, Blocks.LOG.getDefaultState(), ModRegistry.BEANLEAF.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false), false);
 
 	public BlockBeanSapling() {
 		setSoundType(SoundType.PLANT);
@@ -64,6 +64,27 @@ public class BlockBeanSapling extends BlockBush implements IGrowable, IHasModel 
 		}
 	}
 
+    private void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+        if (!TerrainGen.saplingGrowTree(worldIn, rand, pos)) {
+            return;
+        }
+        worldIn.setBlockToAir(pos);
+
+        if (!new BeanTreeGen(5).generate(worldIn, rand, pos)) {
+            worldIn.setBlockState(pos, state);
+        }
+
+    }
+
+    public static void worldGenTrees(World world, BlockPos pos) {
+        int posX = pos.getX() + world.rand.nextInt(8) - world.rand.nextInt(8);
+        int posY = pos.getY() + world.rand.nextInt(4) - world.rand.nextInt(4);
+        int posZ = pos.getZ() + world.rand.nextInt(8) - world.rand.nextInt(8);
+        final BlockPos newPos = new BlockPos(posX, posY, posZ);
+
+        new BeanTreeGen(5).generate(world, world.rand, newPos);
+    }
+
 	@Override
 	public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
 		return true;
@@ -76,8 +97,7 @@ public class BlockBeanSapling extends BlockBush implements IGrowable, IHasModel 
 
 	@Override
 	public void grow(World world, Random rand, BlockPos pos, IBlockState state) {
-		world.setBlockToAir(pos);
-		BEAN_TREE.generate(world, world.rand, pos);
+        generateTree(world, pos, state, rand);
 	}
 
 	@Override

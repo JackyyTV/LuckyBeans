@@ -24,7 +24,7 @@ public class BlockBeanLeaf extends BlockLeaves implements IHasModel {
 		setRegistryName("bean_leaf");
 		setUnlocalizedName(Data.MODID + ".bean_leaf");
 		setCreativeTab(Data.TAB);
-		setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
 		Data.BLOCKS.add(this);
 		Data.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
 	}
@@ -32,13 +32,6 @@ public class BlockBeanLeaf extends BlockLeaves implements IHasModel {
 	@Override
 	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 		return Arrays.asList(new ItemStack(this));
-	}
-
-	@Override
-	public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
-		super.updateTick(world, pos, state, rand);
-		if (world.isAirBlock(pos.down()))
-			world.setBlockState(pos.down(), ModRegistry.MYSTBEANBLOCK.getDefaultState());
 	}
 
 	@Override
