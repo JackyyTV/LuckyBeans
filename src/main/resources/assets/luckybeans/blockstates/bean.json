@@ -8,85 +8,84 @@
 		"meta": {
 			"0": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_white"
 				}
 			},
 			"1": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_orange"
 				}
 			},
 			"2": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_magenta"
 				}
 			},
 			"3": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_lightblue"
 				}
 			},
 			"4": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_yellow"
 				}
 			},
 			"5": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_lime"
 				}
 			},
 			"6": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_pink"
 				}
 			},
 			"7": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_gray"
 				}
 			},
 			"8": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_lightgray"
 				}
 			},
 			"9": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_cyan"
 				}
 			},
 			"10": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_purple"
 				}
 			},
 			"11": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_blue"
 				}
 			},
 			"12": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_brown"
 				}
 			},
 			"13": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_green"
 				}
 			},
 			"14": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_red"
 				}
 			},
 			"15": {
 				"textures": {
-					"layer0": "luckybeans:items/bean"
+					"layer0": "luckybeans:items/bean/bean_black"
 				}
 			}
-
 		}
 	}
 }

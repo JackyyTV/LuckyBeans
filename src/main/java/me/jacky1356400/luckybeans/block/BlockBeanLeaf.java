@@ -66,6 +66,7 @@ public class BlockBeanLeaf extends BlockLeaves implements IHasModel {
 		return meta;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		return getDefaultState().withProperty(CHECK_DECAY, meta % 2 == 1).withProperty(DECAYABLE, meta >= 2);
