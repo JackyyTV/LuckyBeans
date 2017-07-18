@@ -4,11 +4,12 @@ itemGroup.luckybeans=Lucky Beans
 #Items
 item.luckybeans.mysterious_bean.name=§dMysterious Lucky Bean
 item.luckybeans.bean.name=§dLucky Bean
+item.luckybeans.creative_tree_generator.name=§dCreative Tree Generator
 
 #Blocks
 tile.luckybeans.bean_sapling.name=§bLucky Bean Sapling
 tile.luckybeans.mysterious_bean_block.name=§dMysterious Lucky Bean
-tile.luckybeans.bean_leaves.name=§dLucky Bean Leaves
+tile.luckybeans.bean_leaves.name=§bLucky Bean Leaves
 
 #JEI Compat
 luckybeans.bean_leaves.jeidesc=Leaves of the Mysterious Bean Tree. There's a random chance of dropping Lucky Bean Sapling from these leaves.
@@ -16,8 +17,12 @@ luckybeans.bean_sapling.jeidesc=Planting this will grow a Lucky Bean Tree, which
 luckybeans.mysterious_bean_block.jeidesc=Grows under Lucky Bean Trees. Harvesting this drops Mysterious Lucky Bean (or drops the block itself with silk touch).
 luckybeans.mysterious_bean.jeidesc=Obtained by harvesting the Mysterious Lucky Bean Block found under Bean Trees.
 luckybeans.bean.jeidesc=Right clicking with Mysterious Lucky Bean on the hand gives you a random color of Lucky Bean. Eating the Lucky Beans gives you different effects.
+luckybeans.creative_tree_generator.jeidesc=Right clicking with this item on grass block, dirt or farmland will spawn a Lucky Bean Tree instantly.
 
 #Tooltips
+luckybeans.tooltip.creative=Creative-only item.
+luckybeans.tooltip.creative_tree_generator1=Right clicking with this item on grass block, dirt or farmland
+luckybeans.tooltip.creative_tree_generator2=will spawn a Lucky Bean Tree instantly.
 luckybeans.tooltip.color0=White
 luckybeans.tooltip.color1=Orange
 luckybeans.tooltip.color2=Magenta

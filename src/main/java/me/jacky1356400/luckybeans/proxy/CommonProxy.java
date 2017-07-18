@@ -1,9 +1,6 @@
 package me.jacky1356400.luckybeans.proxy;
 
-import java.io.File;
-
 import me.jacky1356400.luckybeans.Config;
-import me.jacky1356400.luckybeans.LuckyBeans;
 import me.jacky1356400.luckybeans.init.ModRegistry;
 import me.jacky1356400.luckybeans.worldgen.BeanTreeWorldGen;
 import net.minecraftforge.common.MinecraftForge;
@@ -12,6 +9,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import java.io.File;
 
 public class CommonProxy {
 

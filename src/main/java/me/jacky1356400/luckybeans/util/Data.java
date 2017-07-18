@@ -1,14 +1,14 @@
 package me.jacky1356400.luckybeans.util;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.jacky1356400.luckybeans.init.ModRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Data {
 

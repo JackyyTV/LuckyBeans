@@ -30,13 +30,10 @@ public class BeanTreeWorldGen implements IWorldGenerator {
                     || (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MOUNTAIN))
                     || (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))) {
                 if (Config.beanTreesGen) {
-                    generateBeanTrees(world, blockPos);
+                    BlockBeanSapling.worldGenTrees(world, blockPos);
                 }
             }
         }
     }
 
-    private void generateBeanTrees(World world, BlockPos pos) {
-        BlockBeanSapling.worldGenTrees(world, pos);
-    }
 }

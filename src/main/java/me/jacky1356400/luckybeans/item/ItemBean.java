@@ -7,21 +7,16 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 
 import java.util.List;
-import java.util.Random;
 
 public class ItemBean extends ItemFood implements IHasModel {
-
-    private PotionEffect[] effects = new PotionEffect[2];
 
 	public ItemBean() {
         super(4, 4, false);
@@ -31,9 +26,6 @@ public class ItemBean extends ItemFood implements IHasModel {
 		setHasSubtypes(true);
 		setAlwaysEdible();
 		Data.ITEMS.add(this);
-
-        effects[0] = new PotionEffect(MobEffects.ABSORPTION, 20, 1);
-        effects[1] = new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 1);
 	}
 
 	@Override
@@ -67,13 +59,14 @@ public class ItemBean extends ItemFood implements IHasModel {
         }
     }
 
-
     @Override
     public void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
         if(!world.isRemote) {
-            int r = new Random().nextInt(effects.length);
-            PotionEffect effect = effects[r];
-            player.addPotionEffect(new PotionEffect(effect.getPotion(), effect.getDuration(), effect.getAmplifier()));
+            /*
+            TODO: Add rewards for different kind of beans
+            For the reward I've designed so far, go to:
+            https://docs.google.com/spreadsheets/d/14mYCAsveFrjtDw8t_DId8u16kPytwj3GkX1Llkakg98/edit?usp=sharing
+            */
         }
     }
 

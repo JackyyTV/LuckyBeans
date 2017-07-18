@@ -30,7 +30,7 @@ public class ClientProxy extends CommonProxy {
 		for (Block block : Data.BLOCKS)
 			if (block instanceof IHasModel)
 				((IHasModel) block).initModel(e);
-		((BlockLeaves) ModRegistry.BEANLEAF).setGraphicsLevel(Minecraft.getMinecraft().gameSettings.fancyGraphics);
+		((BlockLeaves) ModRegistry.BEANLEAVES).setGraphicsLevel(Minecraft.getMinecraft().gameSettings.fancyGraphics);
 	}
 
 	@Override

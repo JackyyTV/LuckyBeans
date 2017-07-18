@@ -88,7 +88,7 @@ public class BeanTreeGen extends WorldGenAbstractTree {
 
                                     if (leavesBlock.isAir(leavesBlockState, worldIn, leavesBlockPos) || leavesBlock.isLeaves(leavesBlockState, worldIn, leavesBlockPos)
                                             || leavesBlock.getMaterial(leavesBlockState) == Material.VINE) {
-                                        this.setBlockAndNotifyAdequately(worldIn, leavesBlockPos, ModRegistry.BEANLEAF.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, true));
+                                        this.setBlockAndNotifyAdequately(worldIn, leavesBlockPos, ModRegistry.BEANLEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, true));
 
                                         BlockPos fruitBlockPos = new BlockPos(xStart, iPosY - 1, zStart);
                                         BlockPos blockBelowFruitPos = new BlockPos(xStart, iPosY - 2, zStart);

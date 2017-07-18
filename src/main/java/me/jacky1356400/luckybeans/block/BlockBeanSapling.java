@@ -1,14 +1,10 @@
 package me.jacky1356400.luckybeans.block;
 
-import java.util.Random;
-
-import me.jacky1356400.luckybeans.init.ModRegistry;
 import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import me.jacky1356400.luckybeans.worldgen.BeanTreeGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -17,12 +13,13 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraftforge.event.terraingen.TerrainGen;
+
+import java.util.Random;
 
 public class BlockBeanSapling extends BlockBush implements IGrowable, IHasModel {
 
-	public BlockBeanSapling() {
+    public BlockBeanSapling() {
 		setSoundType(SoundType.PLANT);
 		setHardness(0.0f);
 		setRegistryName("bean_sapling");

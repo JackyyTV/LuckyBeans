@@ -4,6 +4,7 @@ import me.jacky1356400.luckybeans.block.BlockBeanLeaves;
 import me.jacky1356400.luckybeans.block.BlockBeanSapling;
 import me.jacky1356400.luckybeans.block.BlockMysteriousBean;
 import me.jacky1356400.luckybeans.item.ItemBean;
+import me.jacky1356400.luckybeans.item.ItemCreativeTreeGen;
 import me.jacky1356400.luckybeans.item.ItemMysteriousBean;
 import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.RecipeHelper;
@@ -16,12 +17,13 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ModRegistry {
 
-	public static final Block BEANLEAF = new BlockBeanLeaves();
+	public static final Block BEANLEAVES = new BlockBeanLeaves();
 	public static final Block BEANSAP = new BlockBeanSapling();
 	public static final Block MYSTBEANBLOCK = new BlockMysteriousBean();
 
 	public static final Item MYSTBEAN = new ItemMysteriousBean();
 	public static final Item BEAN = new ItemBean();
+    public static final Item TREEGEN = new ItemCreativeTreeGen();
 
 	private static void initRecipes() {
 		RecipeHelper.addShapeless(BEANSAP, ModRegistry.MYSTBEAN, Blocks.SAPLING);

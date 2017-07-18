@@ -1,7 +1,5 @@
 package me.jacky1356400.luckybeans.block;
 
-import java.util.Random;
-
 import me.jacky1356400.luckybeans.init.ModRegistry;
 import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
@@ -14,6 +12,9 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class BlockMysteriousBean extends Block implements IHasModel {
 
@@ -25,12 +26,22 @@ public class BlockMysteriousBean extends Block implements IHasModel {
 		setHardness(0.1f);
 		setRegistryName("mysterious_bean_block");
 		setUnlocalizedName(Data.MODID + ".mysterious_bean_block");
-		setCreativeTab(Data.TAB);
-		Data.BLOCKS.add(this);
-		Data.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
-	}
+        setCreativeTab(Data.TAB);
+        Data.BLOCKS.add(this);
+        Data.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
+    }
 
-	@Override
+    @Override
+    public boolean canPlaceBlockAt(World world, BlockPos pos) {
+        return world.getBlockState(pos.up()).getBlock() == ModRegistry.BEANLEAVES;
+    }
+
+    @Override
+    public boolean canPlaceTorchOnTop(IBlockState state, IBlockAccess world, BlockPos pos) {
+        return false;
+    }
+
+    @Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return ModRegistry.MYSTBEAN;
 	}

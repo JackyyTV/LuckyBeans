@@ -13,20 +13,24 @@ public class JEICompat implements IModPlugin {
 
     @Override
     public void register(IModRegistry registry) {
-        ItemStack beanleaf = new ItemStack(ModRegistry.BEANLEAF, 1);
-        registry.addIngredientInfo(beanleaf, ItemStack.class, Data.MODID + "." + "bean_leaves.jeidesc");
-
-        ItemStack beansap = new ItemStack(ModRegistry.BEANSAP, 1);
-        registry.addIngredientInfo(beansap, ItemStack.class, Data.MODID + "." + "bean_sapling.jeidesc");
-
-        ItemStack mystbeanblock = new ItemStack(ModRegistry.MYSTBEANBLOCK, 1);
-        registry.addIngredientInfo(mystbeanblock, ItemStack.class, Data.MODID + "." + "mysterious_bean_block.jeidesc");
-
-        ItemStack mystbean = new ItemStack(ModRegistry.MYSTBEAN, 1);
-        registry.addIngredientInfo(mystbean, ItemStack.class, Data.MODID + "." + "mysterious_bean.jeidesc");
-
-        ItemStack bean = new ItemStack(ModRegistry.BEAN, 1, OreDictionary.WILDCARD_VALUE);
-        registry.addIngredientInfo(bean, ItemStack.class, Data.MODID + "." + "bean.jeidesc");
+        //Lucky Bean Leaves
+        registry.addIngredientInfo(new ItemStack(ModRegistry.BEANLEAVES, 1), ItemStack.class,
+                Data.MODID + "." + "bean_leaves.jeidesc");
+        //Lucky Bean Sapling
+        registry.addIngredientInfo(new ItemStack(ModRegistry.BEANSAP, 1), ItemStack.class,
+                Data.MODID + "." + "bean_sapling.jeidesc");
+        //Mysterious Lucky Bean Block
+        registry.addIngredientInfo(new ItemStack(ModRegistry.MYSTBEANBLOCK, 1), ItemStack.class,
+                Data.MODID + "." + "mysterious_bean_block.jeidesc");
+        //Mysterious Lucky Bean
+        registry.addIngredientInfo(new ItemStack(ModRegistry.MYSTBEAN, 1), ItemStack.class,
+                Data.MODID + "." + "mysterious_bean.jeidesc");
+        //Lucky Bean
+        registry.addIngredientInfo(new ItemStack(ModRegistry.BEAN, 1, OreDictionary.WILDCARD_VALUE), ItemStack.class,
+                Data.MODID + "." + "bean.jeidesc");
+        //Creative Tree Generator
+        registry.addIngredientInfo(new ItemStack(ModRegistry.TREEGEN, 1), ItemStack.class,
+                Data.MODID + "." + "creative_tree_generator.jeidesc");
     }
 
 }
