@@ -18,11 +18,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockBeanLeaf extends BlockLeaves implements IHasModel {
+public class BlockBeanLeaves extends BlockLeaves implements IHasModel {
 
-	public BlockBeanLeaf() {
-		setRegistryName("bean_leaf");
-		setUnlocalizedName(Data.MODID + ".bean_leaf");
+	public BlockBeanLeaves() {
+		setRegistryName("bean_leaves");
+		setUnlocalizedName(Data.MODID + ".bean_leaves");
 		setCreativeTab(Data.TAB);
 		setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
 		Data.BLOCKS.add(this);

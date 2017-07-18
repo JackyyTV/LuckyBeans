@@ -3,7 +3,7 @@
 	"defaults": {
 		"model": "cube_all",
 		"textures": {
-			"all": "luckybeans:blocks/bean_leaf"
+			"all": "luckybeans:blocks/bean_leaves"
 		}
 	},
 	"variants": {

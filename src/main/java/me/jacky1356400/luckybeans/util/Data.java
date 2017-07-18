@@ -18,7 +18,7 @@ public class Data {
 	public static final String VERSION = "1.0";
 	public static final String MODID = "luckybeans";
 	public static final String MODNAME = "LuckyBeans";
-	public static final String DEPENDS = "required-after:forge@[14.21.0.2355,];";
+	public static final String DEPENDS = "required-after:forge@[14.21.0.2387,);after:jei@[4.7.0,);";
 	public static final CreativeTabs TAB = new CreativeTabs(MODID) {
 		@Override
 		public ItemStack getTabIconItem() {

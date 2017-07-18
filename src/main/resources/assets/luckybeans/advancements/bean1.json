@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "luckybeans:bean",
+      "data": 1
+    },
+    "title": {
+      "translate": "advancements.luckybeans:bean1"
+    },
+    "description": {
+      "translate": "advancements.luckybeans:bean1.desc"
+    }
+  },
+  "parent": "luckybeans:root",
+  "criteria": {
+    "orange_bean_eaten": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "luckybeans:bean",
+          "data": 1
+        }
+      }
+    }
+  }
+}

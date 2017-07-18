@@ -26,7 +26,7 @@ public class Config {
 
 	private static void initConfig(Configuration cfg) {
 		beanTreesGen = cfg.getBoolean("beanTreesGen", CATEGORY_GENERAL, true, "If true, enables Bean trees world gen");
-		beanTreesGenChance = cfg.getInt("beanTreesGenChance", CATEGORY_GENERAL, 25, 1, 100, "What's the chance (1 in whatever number is set) to spawn a Bean tree per chunk?");
+		beanTreesGenChance = cfg.getInt("beanTreesGenChance", CATEGORY_GENERAL, 25, 1, 10000, "What's the chance (1 in whatever number is set) to spawn a Bean tree per chunk?");
 	}
 
 }

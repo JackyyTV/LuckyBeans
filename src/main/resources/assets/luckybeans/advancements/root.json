@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "luckybeans:mysterious_bean"
+    },
+    "title": {
+      "translate": "itemGroup.luckybeans"
+    },
+    "description": {
+      "translate": "advancements.luckybeans:root.desc"
+    },
+    "background": "luckybeans:textures/gui/advancements/background.png"
+  },
+  "criteria": {
+    "bean_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "luckybeans:mysterious_bean"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 package me.jacky1356400.luckybeans.init;
 
-import me.jacky1356400.luckybeans.block.BlockBeanLeaf;
+import me.jacky1356400.luckybeans.block.BlockBeanLeaves;
 import me.jacky1356400.luckybeans.block.BlockBeanSapling;
 import me.jacky1356400.luckybeans.block.BlockMysteriousBean;
 import me.jacky1356400.luckybeans.item.ItemBean;
@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ModRegistry {
 
-	public static final Block BEANLEAF = new BlockBeanLeaf();
+	public static final Block BEANLEAF = new BlockBeanLeaves();
 	public static final Block BEANSAP = new BlockBeanSapling();
 	public static final Block MYSTBEANBLOCK = new BlockMysteriousBean();
 

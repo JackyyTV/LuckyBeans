@@ -1,7 +1,7 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "luckybeans:bulb",
+    "model": "luckybeans:mysterious_bean_block",
 	"textures": {
 		"0": "luckybeans:blocks/myst_bean_side",
 		"1": "luckybeans:blocks/myst_bean_top",

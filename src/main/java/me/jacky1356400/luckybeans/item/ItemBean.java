@@ -3,6 +3,8 @@ package me.jacky1356400.luckybeans.item;
 import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -14,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 
+import java.util.List;
 import java.util.Random;
 
 public class ItemBean extends ItemFood implements IHasModel {
@@ -53,6 +56,17 @@ public class ItemBean extends ItemFood implements IHasModel {
 			ModelLoader.setCustomModelResourceLocation(this, i, new ModelResourceLocation(getRegistryName(), "meta=" + i));
 		}
 	}
+
+    @Override
+    public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
+        super.addInformation(stack, world, tooltip, flag);
+        for (int i = 0; i < 16; i++) {
+            if (i == getMetadata(stack)) {
+                tooltip.add(I18n.format(Data.MODID + ".tooltip.color" + i));
+            }
+        }
+    }
+
 
     @Override
     public void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
