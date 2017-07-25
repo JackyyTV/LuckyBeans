@@ -15,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Loader;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Random;
 
@@ -28,6 +29,7 @@ public class ItemCreativeTreeGen extends Item implements IHasModel {
         Data.ITEMS.add(this);
     }
 
+    @Override
     public boolean isFull3D() {
         return true;
     }
@@ -42,7 +44,7 @@ public class ItemCreativeTreeGen extends Item implements IHasModel {
         }
     }
 
-    @Override
+    @Override @Nonnull
     public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         return spawnTree(world, pos, player, player.getHeldItem(hand), facing, itemRand) ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
 

@@ -18,7 +18,7 @@ public interface IHasModel {
 		else if (this instanceof Block)
 			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock((Block) this), 0, new ModelResourceLocation(((IForgeRegistryEntry<?>) this).getRegistryName(), "inventory"));
 		else
-			throw new IllegalArgumentException("wat are u doin");
+			throw new IllegalArgumentException("Unable to register model");
 	}
 
 }

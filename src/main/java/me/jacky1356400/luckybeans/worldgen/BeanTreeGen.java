@@ -24,9 +24,7 @@ public class BeanTreeGen extends WorldGenAbstractTree {
         this.minTreeHeight = minTreeHeight;
     }
 
-    @Override
-    @ParametersAreNonnullByDefault
-    @SuppressWarnings("deprecation")
+    @Override @ParametersAreNonnullByDefault @SuppressWarnings("deprecation")
     public boolean generate(World worldIn, Random rand, BlockPos blockPos) {
         final BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos();
 

@@ -14,6 +14,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -29,7 +31,7 @@ public class BlockBeanLeaves extends BlockLeaves implements IHasModel {
 		Data.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
 	}
 
-    @Override
+    @Override @ParametersAreNonnullByDefault
     public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
         return true;
     }
@@ -39,33 +41,33 @@ public class BlockBeanLeaves extends BlockLeaves implements IHasModel {
         return 5;
     }
 
-    @Override
+    @Override @ParametersAreNonnullByDefault
     public boolean canPlaceTorchOnTop(IBlockState state, IBlockAccess world, BlockPos pos) {
         return false;
     }
 
-    @Override
+    @Override @ParametersAreNonnullByDefault
 	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 		return Arrays.asList(new ItemStack(this));
 	}
 
-	@Override
+	@Override @Nonnull @ParametersAreNonnullByDefault
 	protected ItemStack getSilkTouchDrop(IBlockState state) {
 		return new ItemStack(this);
 	}
 
-	@Override
+    @Override @Nonnull
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return Item.getItemFromBlock(ModRegistry.BEANSAP);
 	}
 
-	@Override
+	@Override @Nonnull
 	public EnumType getWoodType(int meta) {
 		return EnumType.OAK;
 	}
 
 	@Override
-	public int getMetaFromState(IBlockState state) {//false, false = 0; true, false = 1; false, true = 2; true, true = 3;
+	public int getMetaFromState(IBlockState state) { //false, false = 0; true, false = 1; false, true = 2; true, true = 3;
 		int meta = 0;
 		if (state.getValue(CHECK_DECAY))
 			meta++;
@@ -74,14 +76,13 @@ public class BlockBeanLeaves extends BlockLeaves implements IHasModel {
 		return meta;
 	}
 
-	@SuppressWarnings("deprecation")
-	@Override
+	@Override @Nonnull @SuppressWarnings("deprecation")
 	public IBlockState getStateFromMeta(int meta) {
 		return getDefaultState().withProperty(CHECK_DECAY, meta % 2 == 1).withProperty(DECAYABLE, meta >= 2);
 
 	}
 
-	@Override
+	@Override @Nonnull
 	public BlockStateContainer createBlockState() {
 		return new BlockStateContainer(this, CHECK_DECAY, DECAYABLE);
 	}

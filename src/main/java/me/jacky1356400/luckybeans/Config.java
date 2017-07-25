@@ -9,6 +9,7 @@ public class Config {
 
 	public static boolean beanTreesGen;
 	public static int beanTreesGenChance;
+    public static boolean giveBeanCommand;
 
 	public static void readConfig() {
 		Configuration cfg = CommonProxy.config;
@@ -27,6 +28,7 @@ public class Config {
 	private static void initConfig(Configuration cfg) {
 		beanTreesGen = cfg.getBoolean("beanTreesGen", CATEGORY_GENERAL, true, "If true, enables Bean trees world gen");
 		beanTreesGenChance = cfg.getInt("beanTreesGenChance", CATEGORY_GENERAL, 25, 1, 10000, "What's the chance (1 in whatever number is set) to spawn a Bean tree per chunk?");
+        giveBeanCommand = cfg.getBoolean("giveBeanCommand", CATEGORY_GENERAL, true, "If true, enables command for giving Mysterious Lucky Beans (This is made for streamers)");
 	}
 
 }

@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class ItemBean extends ItemFood implements IHasModel {
@@ -28,12 +29,17 @@ public class ItemBean extends ItemFood implements IHasModel {
 		Data.ITEMS.add(this);
 	}
 
+    @Override
+    public boolean isFull3D() {
+        return true;
+    }
+
 	@Override
 	public int getMetadata(int damage) {
 		return damage;
 	}
 
-	@Override
+	@Override @ParametersAreNonnullByDefault
 	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
 		if (this.isInCreativeTab(tab)) {
 			for (int i = 0; i < 16; i++) {
@@ -59,7 +65,7 @@ public class ItemBean extends ItemFood implements IHasModel {
         }
     }
 
-    @Override
+    @Override @ParametersAreNonnullByDefault
     public void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
         if(!world.isRemote) {
             /*

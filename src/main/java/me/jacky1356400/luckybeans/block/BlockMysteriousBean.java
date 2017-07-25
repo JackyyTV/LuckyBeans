@@ -14,16 +14,18 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Random;
 
 public class BlockMysteriousBean extends Block implements IHasModel {
 
-	public static final AxisAlignedBB BULB_AABB = new AxisAlignedBB(0.3125D, 0.5D, 0.3125D, 0.6875D, 1.0D, 0.6875D);
+	private static final AxisAlignedBB BEAN_AABB = new AxisAlignedBB(0.3125D, 0.5D, 0.3125D, 0.6875D, 1.0D, 0.6875D);
 
 	public BlockMysteriousBean() {
 		super(Material.WOOD);
 		setSoundType(SoundType.WOOD);
-		setHardness(0.1f);
+		setHardness(0.15f);
 		setRegistryName("mysterious_bean_block");
 		setUnlocalizedName(Data.MODID + ".mysterious_bean_block");
         setCreativeTab(Data.TAB);
@@ -31,47 +33,50 @@ public class BlockMysteriousBean extends Block implements IHasModel {
         Data.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
     }
 
-    @Override
+    @Override @ParametersAreNonnullByDefault
     public boolean canPlaceBlockAt(World world, BlockPos pos) {
         return world.getBlockState(pos.up()).getBlock() == ModRegistry.BEANLEAVES;
     }
 
-    @Override
+    @Override @SuppressWarnings("deprecation")
+    public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos fromPos) {
+        if(!this.canPlaceBlockAt(world, pos)) {
+            world.setBlockToAir(pos);
+            dropBlockAsItem(world, pos, state, 0);
+        }
+    }
+
+    @Override @ParametersAreNonnullByDefault
     public boolean canPlaceTorchOnTop(IBlockState state, IBlockAccess world, BlockPos pos) {
         return false;
     }
 
-    @Override
+    @Override @Nonnull
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return ModRegistry.MYSTBEAN;
 	}
 
-	@SuppressWarnings("deprecation")
-	@Override
+	@Override @SuppressWarnings("deprecation")
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
 
-	@SuppressWarnings("deprecation")
-	@Override
+	@Override @Nonnull @SuppressWarnings("deprecation")
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
-		return BULB_AABB;
+		return BEAN_AABB;
 	}
 
-	@SuppressWarnings("deprecation")
-	@Override
+	@Override @SuppressWarnings("deprecation") @ParametersAreNonnullByDefault
 	public AxisAlignedBB getCollisionBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
-		return BULB_AABB;
+		return BEAN_AABB;
 	}
 
-	@SuppressWarnings("deprecation")
-	@Override
+	@Override @SuppressWarnings("deprecation")
 	public boolean isFullCube(IBlockState state) {
 		return false;
 	}
 
-	@SuppressWarnings("deprecation")
-	@Override
+	@Override @SuppressWarnings("deprecation")
 	public boolean isNormalCube(IBlockState state) {
 		return false;
 	}

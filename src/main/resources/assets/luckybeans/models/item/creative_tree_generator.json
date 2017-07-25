@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "luckybeans:items/creative_tree_generator"
+    }
+}

@@ -2,7 +2,7 @@
 itemGroup.luckybeans=Lucky Beans
 
 #Items
-item.luckybeans.mysterious_bean.name=§dMysterious Lucky Bean
+item.luckybeans.mysterious_bean.name=Mysterious Lucky Bean
 item.luckybeans.bean.name=§dLucky Bean
 item.luckybeans.creative_tree_generator.name=§dCreative Tree Generator
 

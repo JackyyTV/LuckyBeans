@@ -8,10 +8,12 @@ import mezz.jei.api.JEIPlugin;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 @JEIPlugin
 public class JEICompat implements IModPlugin {
 
-    @Override
+    @Override @ParametersAreNonnullByDefault
     public void register(IModRegistry registry) {
         //Lucky Bean Leaves
         registry.addIngredientInfo(new ItemStack(ModRegistry.BEANLEAVES, 1), ItemStack.class,
