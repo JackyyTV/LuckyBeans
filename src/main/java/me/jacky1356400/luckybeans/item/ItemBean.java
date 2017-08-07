@@ -1,5 +1,6 @@
 package me.jacky1356400.luckybeans.item;
 
+import me.jacky1356400.luckybeans.handler.RewardHandler;
 import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -67,13 +68,8 @@ public class ItemBean extends ItemFood implements IHasModel {
 
     @Override @ParametersAreNonnullByDefault
     public void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
-        if(!world.isRemote) {
-            /*
-            TODO: Add rewards for different kind of beans
-            For the reward I've designed so far, go to:
-            https://docs.google.com/spreadsheets/d/14mYCAsveFrjtDw8t_DId8u16kPytwj3GkX1Llkakg98/edit?usp=sharing
-            */
-        }
+        if (!world.isRemote)
+            new RewardHandler().randomReward(player, stack);
     }
 
 }
