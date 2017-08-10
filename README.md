@@ -3,4 +3,4 @@
 
 ![](https://i.gyazo.com/5a377886e8f9eb1bf5b95e61bb33200e.png)
 
-Test your luck by eating beans in Minecraft!
+Bean Boozled in Minecraft!
