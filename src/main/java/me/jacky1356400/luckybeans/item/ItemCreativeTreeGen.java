@@ -6,6 +6,7 @@ import me.jacky1356400.luckybeans.worldgen.BeanTreeGen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
@@ -30,11 +31,6 @@ public class ItemCreativeTreeGen extends Item implements IHasModel {
     }
 
     @Override
-    public boolean isFull3D() {
-        return true;
-    }
-
-    @Override
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
         super.addInformation(stack, world, tooltip, flag);
         tooltip.add(I18n.format(Data.MODID + ".tooltip.creative"));
@@ -46,25 +42,24 @@ public class ItemCreativeTreeGen extends Item implements IHasModel {
 
     @Override @Nonnull
     public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        return spawnTree(world, pos, player, player.getHeldItem(hand), facing, itemRand) ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
-
-    }
-
-    private static boolean spawnTree(World world, BlockPos pos, EntityPlayer player, ItemStack stack, EnumFacing facing, Random rand) {
         if (!world.isRemote && !player.isSneaking()) {
             pos = pos.offset(facing);
-
-            if (!player.canPlayerEdit(pos, facing, stack)) {
-                return false;
+            if (!player.canPlayerEdit(pos, facing, player.getHeldItem(hand))) {
+                return EnumActionResult.FAIL;
             }
             else {
                 if (world.isAirBlock(pos)) {
-                    new BeanTreeGen(5).generate(world, rand, pos);
+                    new BeanTreeGen(5).generate(world, new Random(), pos);
                 }
-                return true;
+                return EnumActionResult.SUCCESS;
             }
         }
-        return false;
+        return EnumActionResult.FAIL;
+    }
+
+    @Override @Nonnull
+    public EnumAction getItemUseAction(ItemStack stack) {
+        return EnumAction.BLOCK;
     }
 
 }

@@ -72,18 +72,6 @@ public class BlockBeanSapling extends BlockBush implements IGrowable, IHasModel 
 		}
 	}
 
-    private void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        if (!TerrainGen.saplingGrowTree(worldIn, rand, pos)) {
-            return;
-        }
-        worldIn.setBlockToAir(pos);
-
-        if (!new BeanTreeGen(5).generate(worldIn, rand, pos)) {
-            worldIn.setBlockState(pos, state);
-        }
-
-    }
-
     public static void worldGenTrees(World world, BlockPos pos) {
         int posX = pos.getX() + world.rand.nextInt(8) - world.rand.nextInt(8);
         int posY = pos.getY() + world.rand.nextInt(4) - world.rand.nextInt(4);
@@ -105,7 +93,14 @@ public class BlockBeanSapling extends BlockBush implements IGrowable, IHasModel 
 
 	@Override @ParametersAreNonnullByDefault
 	public void grow(World world, Random rand, BlockPos pos, IBlockState state) {
-        generateTree(world, pos, state, rand);
+        if (!TerrainGen.saplingGrowTree(world, rand, pos)) {
+            return;
+        }
+        world.setBlockToAir(pos);
+
+        if (!new BeanTreeGen(5).generate(world, rand, pos)) {
+            world.setBlockState(pos, state);
+        }
 	}
 
 	@Override @Nonnull

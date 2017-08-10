@@ -6,12 +6,12 @@
 		"0": "luckybeans:blocks/myst_bean_side",
 		"1": "luckybeans:blocks/myst_bean_top",
 		"particle": "luckybeans:blocks/myst_bean_side"
-		}
+	}
   },
   "variants": {
     "normal": [{}],
     "inventory": {
-	"transform": "forge:default-block"
+      "transform": "forge:default-block"
 	}
   }
 }

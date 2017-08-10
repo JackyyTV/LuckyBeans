@@ -31,6 +31,11 @@ public class BlockBeanLeaves extends BlockLeaves implements IHasModel {
 		Data.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
 	}
 
+    @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
     @Override @ParametersAreNonnullByDefault
     public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
         return true;
@@ -79,7 +84,6 @@ public class BlockBeanLeaves extends BlockLeaves implements IHasModel {
 	@Override @Nonnull @SuppressWarnings("deprecation")
 	public IBlockState getStateFromMeta(int meta) {
 		return getDefaultState().withProperty(CHECK_DECAY, meta % 2 == 1).withProperty(DECAYABLE, meta >= 2);
-
 	}
 
 	@Override @Nonnull

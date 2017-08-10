@@ -28,11 +28,6 @@ public class ItemMysteriousBean extends Item implements IHasModel {
 		Data.ITEMS.add(this);
 	}
 
-	@Override
-	public boolean isFull3D() {
-		return true;
-	}
-
     @SideOnly(Side.CLIENT)
     public FontRenderer getFontRenderer(ItemStack stack) {
         return RainbowTextGen.INSTANCE.init(true);
@@ -41,7 +36,6 @@ public class ItemMysteriousBean extends Item implements IHasModel {
 	@Override @Nonnull
 	public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		return giveBean(world, pos, player, player.getHeldItem(hand)) ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
-
 	}
 
 	@Override @Nonnull

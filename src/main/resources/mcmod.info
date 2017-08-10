@@ -7,9 +7,9 @@
   "mcversion": "1.12",
   "url": "https://github.com/Jacky1356400/LuckyBeans",
   "updateUrl": "",
-  "authorList": ["Jacky1356400", "Shadows_of_Fire", "Turkey2349"],
-  "credits": "",
-  "logoFile": "",
+  "authorList": ["Jacky1356400"],
+  "credits": "Shadows_of_Fire and Turkey2349",
+  "logoFile": "assets/luckybeans/logo.png",
   "screenshots": [],
   "dependencies": []
 }

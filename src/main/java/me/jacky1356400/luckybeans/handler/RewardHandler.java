@@ -51,13 +51,28 @@ public class RewardHandler {
                 break;
             }
             case 4 : {
-                //Spawn random mob
-                LuckyBeans.logger.info("Spawned reward: Random mob");
+                //Spawn random mob x1
+                LuckyBeans.logger.info("Spawned reward: Random mob x1");
                 new MobHandler(living.getEntityWorld()).giveRandomMob(living);
                 break;
             }
             case 5 : {
-                //Place down grass block with sapling on top (Green and lime beans only)
+                //Spawn random mob x2
+                LuckyBeans.logger.info("Spawned reward: Random mob x2");
+                new MobHandler(living.getEntityWorld()).giveRandomMob(living);
+                new MobHandler(living.getEntityWorld()).giveRandomMob(living);
+                break;
+            }
+            case 6 : {
+                //Spawn random mob x3
+                LuckyBeans.logger.info("Spawned reward: Random mob x3");
+                new MobHandler(living.getEntityWorld()).giveRandomMob(living);
+                new MobHandler(living.getEntityWorld()).giveRandomMob(living);
+                new MobHandler(living.getEntityWorld()).giveRandomMob(living);
+                break;
+            }
+            case 7 : {
+                //Place down grass block with sapling on top
                 LuckyBeans.logger.info("Spawned reward: Spawn grass + sapling");
                 living.world.playSound(null, living.posX, living.posY, living.posZ, SoundEvents.BLOCK_GRASS_PLACE,
                         SoundCategory.MASTER, 0.5F, 1.0F);
@@ -65,25 +80,25 @@ public class RewardHandler {
                 living.world.setBlockState(new BlockPos(living.posX, living.posY, living.posZ), Blocks.SAPLING.getDefaultState());
                 break;
             }
-            case 6 : {
+            case 8 : {
                 //Place down lava
                 LuckyBeans.logger.info("Spawned reward: Spawn lava");
                 living.world.setBlockState(new BlockPos(living.posX, living.posY, living.posZ), Blocks.FLOWING_LAVA.getDefaultState());
                 break;
             }
-            case 7 : {
+            case 9 : {
                 //Set on fire for random amount of time (up to 30 seconds)
                 LuckyBeans.logger.info("Spawned reward: Set player on fire");
                 living.setFire(new Random().nextInt(30));
                 break;
             }
-            case 8 : {
+            case 10 : {
                 //Set random HP
                 LuckyBeans.logger.info("Spawned reward: Set random HP on player");
                 living.setHealth(living.world.rand.nextInt(19) + 1);
                 break;
             }
-            case 9 : {
+            case 11 : {
                 //Set random amount of arrows on player (up to 50)
                 LuckyBeans.logger.info("Spawned reward: Set random amount of arrows on player");
                 living.world.playSound(null, living.posX, living.posY, living.posZ, SoundEvents.ENTITY_ARROW_HIT,
@@ -91,21 +106,21 @@ public class RewardHandler {
                 living.setArrowCountInEntity(new Random().nextInt(50));
                 break;
             }
-            case 10 : {
+            case 12 : {
                 //Mini explosion
                 LuckyBeans.logger.info("Spawned reward: Mini explosion");
                 living.world.createExplosion(null, living.posX, living.posY, living.posZ,
                         0.25F, false);
                 break;
             }
-            case 11 : {
+            case 13 : {
                 //Spawn water
                 LuckyBeans.logger.info("Spawned reward: Spawn water");
                 if (!living.world.provider.doesWaterVaporize())
                     living.world.setBlockState(new BlockPos(living), Blocks.FLOWING_WATER.getDefaultState());
                 break;
             }
-            case 12 : {
+            case 14 : {
                 //Drop player's own head
                 LuckyBeans.logger.info("Spawned reward: Drop player head");
                 if (living instanceof EntityPlayer) {
@@ -118,7 +133,7 @@ public class RewardHandler {
                 }
                 break;
             }
-            case 13 : {
+            case 15 : {
                 //Throw into the air
                 LuckyBeans.logger.info("Spawned reward: Throw into the air");
                 living.isAirBorne = true;
@@ -128,25 +143,41 @@ public class RewardHandler {
                         living.motionX, living.motionY, living.motionZ));
                 break;
             }
-            case 14 : {
+            case 16 : {
                 //Spawn random item
                 LuckyBeans.logger.info("Spawned reward: Spawn random item");
+                living.sendMessage(new TextComponentString("Where did you pick that up from?"));
                 ItemStack item = new ItemStack(Item.getItemById(256 + new Random().nextInt(166)));
+                item.setStackDisplayName(living.getName() + "'s " + item.getDisplayName());
                 living.entityDropItem(item, 0);
                 break;
             }
-            case 15 : {
+            case 17 : {
                 //Spawn a Mysterious Lucky Bean - try again!
                 LuckyBeans.logger.info("Spawned reward: Try again");
-                living.sendMessage(new TextComponentString("Try again!"));
+                living.sendMessage(new TextComponentString("Nope, try again!"));
                 living.entityDropItem(new ItemStack(ModRegistry.MYSTBEAN), 0);
+                break;
+            }
+            case 18 : {
+                //Spawn 2x Mysterious Lucky Bean - try again!
+                LuckyBeans.logger.info("Spawned reward: Try again x2");
+                living.sendMessage(new TextComponentString("That was \"lucky\"... Try again!"));
+                living.entityDropItem(new ItemStack(ModRegistry.MYSTBEAN, 2), 0);
+                break;
+            }
+            case 19 : {
+                //Spawn 3x Mysterious Lucky Bean - try again!
+                LuckyBeans.logger.info("Spawned reward: Try again x3");
+                living.sendMessage(new TextComponentString("That was \"lucky\"... Try again!"));
+                living.entityDropItem(new ItemStack(ModRegistry.MYSTBEAN, 3), 0);
                 break;
             }
         }
     }
 
     public void randomReward(EntityLivingBase player, ItemStack stack) {
-        rewards(stack, player, new Random().nextInt(16));
+        rewards(stack, player, new Random().nextInt(20));
     }
 
 }

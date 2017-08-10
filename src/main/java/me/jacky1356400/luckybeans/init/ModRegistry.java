@@ -44,7 +44,8 @@ public class ModRegistry {
     public void onRecipeRegistry(RegistryEvent.Register<IRecipe> e) {
         GameRegistry.addShapelessRecipe(
                 new ResourceLocation(MODID, "bean_sapling"),
-                new ResourceLocation(MODID, "bean_sapling"), new ItemStack(BEANSAP, 1),
+                new ResourceLocation(MODID, "bean_sapling"),
+                new ItemStack(BEANSAP, 1),
                 Ingredient.fromStacks(new ItemStack(Blocks.SAPLING, 1)),
                 Ingredient.fromStacks(new ItemStack(MYSTBEAN, 1))
         );

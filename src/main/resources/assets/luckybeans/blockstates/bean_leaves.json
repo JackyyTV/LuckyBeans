@@ -1,21 +1,17 @@
 {
-	"forge_marker": 1,
-	"defaults": {
-		"model": "cube_all",
-		"textures": {
-			"all": "luckybeans:blocks/bean_leaves"
-		}
-	},
-	"variants": {
-		"normal": [{}],
-		"inventory": [{}],
-		"decayable": {
-			"true": {},
-			"false": {}
-		},
-		"check_decay": {
-			"true": {},
-			"false": {}
-		}
-	}
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all"
+  },
+  "variants": {
+    "normal": [
+      { "model": "luckybeans:bean_leaves1", "weight": 3 },
+      { "model": "luckybeans:bean_leaves2", "weight": 1 },
+      { "model": "luckybeans:bean_leaves3", "weight": 1 },
+      { "model": "luckybeans:bean_leaves4", "weight": 1 }
+    ],
+    "inventory": [
+      { "model": "luckybeans:bean_leaves2" }
+    ]
+  }
 }

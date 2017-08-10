@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Data.MODID, version = Data.VERSION, name = Data.MODNAME, useMetadata = true, dependencies = Data.DEPENDS)
+@Mod(modid = Data.MODID, version = Data.VERSION, name = Data.MODNAME, dependencies = Data.DEPENDS, useMetadata = true)
 public class LuckyBeans {
 
 	public static Logger logger = LogManager.getLogger("LuckyBeans");

@@ -30,11 +30,6 @@ public class ItemBean extends ItemFood implements IHasModel {
 		Data.ITEMS.add(this);
 	}
 
-    @Override
-    public boolean isFull3D() {
-        return true;
-    }
-
 	@Override
 	public int getMetadata(int damage) {
 		return damage;
