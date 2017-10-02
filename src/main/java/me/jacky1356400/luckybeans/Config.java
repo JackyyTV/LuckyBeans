@@ -1,7 +1,12 @@
 package me.jacky1356400.luckybeans;
 
 import me.jacky1356400.luckybeans.proxy.CommonProxy;
+import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.client.config.IConfigElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Config {
 
@@ -24,6 +29,15 @@ public class Config {
 			}
 		}
 	}
+
+    public static List<IConfigElement> getConfigElements() {
+        List<IConfigElement> list = new ArrayList<>();
+        Configuration cfg = CommonProxy.config;
+
+        list.add(new ConfigElement(cfg.getCategory(CATEGORY_GENERAL)));
+
+        return list;
+    }
 
 	private static void initConfig(Configuration cfg) {
 		beanTreesGen = cfg.getBoolean("beanTreesGen", CATEGORY_GENERAL, true, "If true, enables Bean trees world gen");

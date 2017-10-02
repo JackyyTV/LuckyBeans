@@ -1,6 +1,6 @@
 package me.jacky1356400.luckybeans.block;
 
-import me.jacky1356400.luckybeans.util.Data;
+import me.jacky1356400.luckybeans.LuckyBeans;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import me.jacky1356400.luckybeans.worldgen.BeanTreeGen;
 import net.minecraft.block.Block;
@@ -29,10 +29,10 @@ public class BlockBeanSapling extends BlockBush implements IGrowable, IHasModel 
 		setSoundType(SoundType.PLANT);
 		setHardness(0.0f);
 		setRegistryName("bean_sapling");
-		setUnlocalizedName(Data.MODID + ".bean_sapling");
-		setCreativeTab(Data.TAB);
-		Data.BLOCKS.add(this);
-		Data.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
+		setUnlocalizedName(LuckyBeans.MODID + ".bean_sapling");
+		setCreativeTab(LuckyBeans.TAB);
+		LuckyBeans.BLOCKS.add(this);
+		LuckyBeans.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
 	}
 
 	@Override

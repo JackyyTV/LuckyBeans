@@ -2,6 +2,7 @@ package me.jacky1356400.luckybeans.proxy;
 
 import me.jacky1356400.luckybeans.Config;
 import me.jacky1356400.luckybeans.init.ModRegistry;
+import me.jacky1356400.luckybeans.reward.DefaultRewards;
 import me.jacky1356400.luckybeans.worldgen.BeanTreeWorldGen;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -24,6 +25,7 @@ public class CommonProxy {
 	}
 
 	public void init(FMLInitializationEvent e) {
+        DefaultRewards.init();
         GameRegistry.registerWorldGenerator(new BeanTreeWorldGen(), 0);
 	}
 

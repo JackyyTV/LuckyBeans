@@ -1,7 +1,7 @@
 package me.jacky1356400.luckybeans.item;
 
+import me.jacky1356400.luckybeans.LuckyBeans;
 import me.jacky1356400.luckybeans.init.ModRegistry;
-import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import me.jacky1356400.luckybeans.util.RainbowTextGen;
 import net.minecraft.client.gui.FontRenderer;
@@ -22,10 +22,10 @@ import javax.annotation.Nonnull;
 public class ItemMysteriousBean extends Item implements IHasModel {
 
 	public ItemMysteriousBean() {
-		setRegistryName(Data.MODID + ":mysterious_bean");
-		setUnlocalizedName(Data.MODID + ".mysterious_bean");
-		setCreativeTab(Data.TAB);
-		Data.ITEMS.add(this);
+		setRegistryName(LuckyBeans.MODID + ":mysterious_bean");
+		setUnlocalizedName(LuckyBeans.MODID + ".mysterious_bean");
+		setCreativeTab(LuckyBeans.TAB);
+		LuckyBeans.ITEMS.add(this);
 	}
 
     @SideOnly(Side.CLIENT)

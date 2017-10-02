@@ -1,7 +1,7 @@
 package me.jacky1356400.luckybeans.proxy;
 
+import me.jacky1356400.luckybeans.LuckyBeans;
 import me.jacky1356400.luckybeans.init.ModRegistry;
-import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -26,10 +26,10 @@ public class ClientProxy extends CommonProxy {
 
 	@SubscribeEvent
 	public void onModelRegistry(ModelRegistryEvent e) {
-		for (Item item : Data.ITEMS)
+		for (Item item : LuckyBeans.ITEMS)
 			if (item instanceof IHasModel)
 				((IHasModel) item).initModel(e);
-		for (Block block : Data.BLOCKS)
+		for (Block block : LuckyBeans.BLOCKS)
 			if (block instanceof IHasModel)
 				((IHasModel) block).initModel(e);
         ModelLoader.setCustomStateMapper(ModRegistry.BEANLEAVES, (new StateMap.Builder())

@@ -1,7 +1,7 @@
 package me.jacky1356400.luckybeans.item;
 
+import me.jacky1356400.luckybeans.LuckyBeans;
 import me.jacky1356400.luckybeans.handler.RewardHandler;
-import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
@@ -17,17 +17,18 @@ import net.minecraftforge.client.model.ModelLoader;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
+import java.util.Random;
 
 public class ItemBean extends ItemFood implements IHasModel {
 
 	public ItemBean() {
-        super(4, 4, false);
-		setRegistryName(Data.MODID + ":bean");
-		setUnlocalizedName(Data.MODID + ".bean");
-		setCreativeTab(Data.TAB);
+        super(4, 0.4f, false);
+		setRegistryName(LuckyBeans.MODID + ":bean");
+		setUnlocalizedName(LuckyBeans.MODID + ".bean");
+		setCreativeTab(LuckyBeans.TAB);
 		setHasSubtypes(true);
 		setAlwaysEdible();
-		Data.ITEMS.add(this);
+		LuckyBeans.ITEMS.add(this);
 	}
 
 	@Override
@@ -56,7 +57,7 @@ public class ItemBean extends ItemFood implements IHasModel {
         super.addInformation(stack, world, tooltip, flag);
         for (int i = 0; i < 16; i++) {
             if (i == getMetadata(stack)) {
-                tooltip.add(I18n.format(Data.MODID + ".tooltip.color" + i));
+                tooltip.add(I18n.format(LuckyBeans.MODID + ".tooltip.color" + i));
             }
         }
     }
@@ -64,7 +65,7 @@ public class ItemBean extends ItemFood implements IHasModel {
     @Override @ParametersAreNonnullByDefault
     public void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
         if (!world.isRemote)
-            new RewardHandler().randomReward(player, stack);
+            RewardHandler.INSTANCE.randomReward(world, player.getPosition(), player, new Random().nextInt(RewardHandler.INSTANCE.rewardMap.size()));
     }
 
 }

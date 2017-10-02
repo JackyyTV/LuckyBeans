@@ -1,6 +1,6 @@
 package me.jacky1356400.luckybeans.item;
 
-import me.jacky1356400.luckybeans.util.Data;
+import me.jacky1356400.luckybeans.LuckyBeans;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import me.jacky1356400.luckybeans.worldgen.BeanTreeGen;
 import net.minecraft.client.resources.I18n;
@@ -23,20 +23,20 @@ import java.util.Random;
 public class ItemCreativeTreeGen extends Item implements IHasModel {
 
     public ItemCreativeTreeGen() {
-        setRegistryName(Data.MODID + ":creative_tree_generator");
-        setUnlocalizedName(Data.MODID + ".creative_tree_generator");
+        setRegistryName(LuckyBeans.MODID + ":creative_tree_generator");
+        setUnlocalizedName(LuckyBeans.MODID + ".creative_tree_generator");
         setMaxStackSize(1);
-        setCreativeTab(Data.TAB);
-        Data.ITEMS.add(this);
+        setCreativeTab(LuckyBeans.TAB);
+        LuckyBeans.ITEMS.add(this);
     }
 
     @Override
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
         super.addInformation(stack, world, tooltip, flag);
-        tooltip.add(I18n.format(Data.MODID + ".tooltip.creative"));
+        tooltip.add(I18n.format(LuckyBeans.MODID + ".tooltip.creative"));
         if (!Loader.isModLoaded("jei")) {
-            tooltip.add(I18n.format(Data.MODID + ".tooltip.creative_tree_generator1"));
-            tooltip.add(I18n.format(Data.MODID + ".tooltip.creative_tree_generator2"));
+            tooltip.add(I18n.format(LuckyBeans.MODID + ".tooltip.creative_tree_generator1"));
+            tooltip.add(I18n.format(LuckyBeans.MODID + ".tooltip.creative_tree_generator2"));
         }
     }
 

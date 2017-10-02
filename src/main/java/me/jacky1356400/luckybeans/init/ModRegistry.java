@@ -1,12 +1,12 @@
 package me.jacky1356400.luckybeans.init;
 
+import me.jacky1356400.luckybeans.LuckyBeans;
 import me.jacky1356400.luckybeans.block.BlockBeanLeaves;
 import me.jacky1356400.luckybeans.block.BlockBeanSapling;
 import me.jacky1356400.luckybeans.block.BlockMysteriousBean;
 import me.jacky1356400.luckybeans.item.ItemBean;
 import me.jacky1356400.luckybeans.item.ItemCreativeTreeGen;
 import me.jacky1356400.luckybeans.item.ItemMysteriousBean;
-import me.jacky1356400.luckybeans.util.Data;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -18,7 +18,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import static me.jacky1356400.luckybeans.util.Data.MODID;
+import static me.jacky1356400.luckybeans.LuckyBeans.MODID;
 
 public class ModRegistry {
 
@@ -32,12 +32,12 @@ public class ModRegistry {
 
     @SubscribeEvent
     public void onBlockRegistry(RegistryEvent.Register<Block> e) {
-        e.getRegistry().registerAll(Data.BLOCKS.toArray(new Block[0]));
+        e.getRegistry().registerAll(LuckyBeans.BLOCKS.toArray(new Block[0]));
     }
 
     @SubscribeEvent
     public void onItemRegistry(RegistryEvent.Register<Item> e) {
-        e.getRegistry().registerAll(Data.ITEMS.toArray(new Item[0]));
+        e.getRegistry().registerAll(LuckyBeans.ITEMS.toArray(new Item[0]));
     }
 
     @SubscribeEvent

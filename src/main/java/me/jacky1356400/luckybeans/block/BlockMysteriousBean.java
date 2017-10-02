@@ -1,7 +1,7 @@
 package me.jacky1356400.luckybeans.block;
 
+import me.jacky1356400.luckybeans.LuckyBeans;
 import me.jacky1356400.luckybeans.init.ModRegistry;
-import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -27,10 +27,10 @@ public class BlockMysteriousBean extends Block implements IHasModel {
 		setSoundType(SoundType.WOOD);
 		setHardness(0.15f);
 		setRegistryName("mysterious_bean_block");
-		setUnlocalizedName(Data.MODID + ".mysterious_bean_block");
-        setCreativeTab(Data.TAB);
-        Data.BLOCKS.add(this);
-        Data.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
+		setUnlocalizedName(LuckyBeans.MODID + ".mysterious_bean_block");
+        setCreativeTab(LuckyBeans.TAB);
+        LuckyBeans.BLOCKS.add(this);
+        LuckyBeans.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
     }
 
     @Override @ParametersAreNonnullByDefault

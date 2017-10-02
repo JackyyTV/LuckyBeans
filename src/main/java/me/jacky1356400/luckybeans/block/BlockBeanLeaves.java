@@ -1,7 +1,7 @@
 package me.jacky1356400.luckybeans.block;
 
+import me.jacky1356400.luckybeans.LuckyBeans;
 import me.jacky1356400.luckybeans.init.ModRegistry;
-import me.jacky1356400.luckybeans.util.Data;
 import me.jacky1356400.luckybeans.util.IHasModel;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks.EnumType;
@@ -24,11 +24,11 @@ public class BlockBeanLeaves extends BlockLeaves implements IHasModel {
 
 	public BlockBeanLeaves() {
 		setRegistryName("bean_leaves");
-		setUnlocalizedName(Data.MODID + ".bean_leaves");
-		setCreativeTab(Data.TAB);
+		setUnlocalizedName(LuckyBeans.MODID + ".bean_leaves");
+		setCreativeTab(LuckyBeans.TAB);
 		setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
-		Data.BLOCKS.add(this);
-		Data.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
+		LuckyBeans.BLOCKS.add(this);
+		LuckyBeans.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
 	}
 
     @Override
